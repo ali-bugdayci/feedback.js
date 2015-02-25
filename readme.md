@@ -1,6 +1,10 @@
 feedback.js - Feedback form with screenshot
 ===========================================
 
+**Note:** since PR [inspirehep/inspire-next#207](https://github.com/inspirehep/inspire-next/pull/207) this repository is no longer used and thus no longer mantained.
+
+---
+
 wip... preview available at http://experiments.hertzen.com/jsfeedback/
 
 This script allows you to create feedback forms which include a screenshot, created on the clients browser, along with the form. The screenshot is based on the DOM and as such may not be 100% accurate to the real representation as it does not make an actual screenshot, but builds the screenshot based on the information available on the page.
