@@ -16,13 +16,11 @@ var log = function( msg ) {
 },
 // function to remove elements, input as arrays
 removeElements = function( remove ) {
-    for (var i = 0, len = remove.length; i < len; i++ ) {
-        var item = Array.prototype.pop.call( remove );
-        if ( item !== undefined ) {
-            if (item.parentNode !== null ) { // check that the item was actually added to DOM
-                item.parentNode.removeChild( item );
-            }
-        }
+    for (var i = remove.length-1; i >= 0; i-- ) {
+        var item = remove[i];
+
+        if (item && item.parentNode)// check that the item was actually added to DOM
+            item.parentNode.removeChild( item );
     }
 },
 loader = function() {
@@ -92,7 +90,7 @@ window.Feedback = function( options ) {
     options.sendLabel = options.sendLabel || "Send";
     options.closeLabel = options.closeLabel || "Close";
     
-    options.messageSuccess = options.messageSuccess || "Your feedback was sent succesfully.";
+    options.messageSuccess = options.messageSuccess || "Your feedback was sent successfully.";
     options.messageError = options.messageError || "There was an error sending your feedback to the server.";
     
   
@@ -483,8 +481,12 @@ window.Feedback.Screenshot.prototype.start = function( modal, modalHeader, modal
         // delegate mouse move event for body
         this.mouseMoveEvent = function( e ) {
 
+            //fix SVG errors
+            var className = e.target.className;
+            className = className.baseVal !== undefined ? className.baseVal : className;
+
             // set close button
-            if ( e.target !== previousElement && (e.target.className.indexOf( $this.options.blackoutClass ) !== -1 || e.target.className.indexOf( $this.options.highlightClass ) !== -1)) {
+            if ( e.target !== previousElement && (className.indexOf( $this.options.blackoutClass ) !== -1 || className.indexOf( $this.options.highlightClass ) !== -1)) {
 
                 var left = (parseInt(e.target.style.left, 10) +  parseInt(e.target.style.width, 10));
                 left = Math.max( left, 10 );

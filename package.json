@@ -1,0 +1,32 @@
+{
+  "name": "feedback.js",
+  "version": "1.0.0",
+  "description": "Feedback with html2canvas",
+  "main": "feedback.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ali-bugdayci/feedback.js.git"
+  },
+  "keywords": [
+    "feedback",
+    "html2canvas",
+    "angular.js"
+  ],
+  "author": "Ali Bugdayci",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ali-bugdayci/feedback.js/issues"
+  },
+  "homepage": "https://github.com/ali-bugdayci/feedback.js#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-uglify": "^1.5.1"
+  }
+}
